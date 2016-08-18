@@ -27,7 +27,6 @@ public class SpongeBeGone extends JavaPlugin implements Listener
         
         final List<WaterDataHolder> waterBlocksAroundSponge = getWaterBlocks(event.getBlock());
         
-        System.out.println("1");
         Bukkit.getScheduler().runTask(this, new Runnable()
         {
             @SuppressWarnings("deprecation")
@@ -35,13 +34,7 @@ public class SpongeBeGone extends JavaPlugin implements Listener
             {
                 for(WaterDataHolder holder : waterBlocksAroundSponge)
                 {
-                    // System.out.println("2");
                     holder.getBlock().setType(holder.getType());
-                    System.out.println(holder.getBlock().getData());
-                    // if(holder.getType() == Material.STATIONARY_WATER)
-                    // System.out.println("STAT");
-                    // else if(holder.getType() == Material.WATER)
-                    // System.out.println("FLOW");
                     holder.getBlock().setData(holder.getData());
                 }
                 event.getBlock().setType(Material.SPONGE);
@@ -123,11 +116,4 @@ public class SpongeBeGone extends JavaPlugin implements Listener
     {
         return target.getType() == Material.WATER || target.getType() == Material.STATIONARY_WATER;
     }
-    //
-    // @EventHandler
-    // public void blockFromTo(BlockFromToEvent event)
-    // {
-    // System.out.println(event.getToBlock().getType().toString());
-    // event.setCancelled(true);
-    // }
 }
