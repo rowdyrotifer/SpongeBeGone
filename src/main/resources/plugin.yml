@@ -1,0 +1,5 @@
+main: com.marklalor.spongebegone.SpongeBeGone
+name: SpongeBeGone
+version: 0.1
+author: "Mark Lalor"
+description: Disable sponges from removing water.
